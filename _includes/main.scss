@@ -1,0 +1,32 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+
+PROJECT:	Project Name
+VERSION:	Versoin Number
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+-------------------------------------------------------------------*/
+
+@import '{{ site.baseurl }}/js/vendors/bootstrap/bootstrap.min.css';
+
+@import '{{ site.baseurl }}/js/vendors/slick/slick.css';
+
+@import '{{ site.baseurl }}/js/vendors/themify-icons/themify-icons.css';
+
+@import 'variables';
+
+@import 'mixins';
+
+@import 'typography';
+
+@import 'buttons';
+
+@import 'common';
+
+@import 'templates/navigation';
+
+@import 'templates/homepage';
+
+@import 'templates/blog';
