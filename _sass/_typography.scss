@@ -1,12 +1,10 @@
 /*  typography */
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,700');
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,700');
 
-// @font-face {
-//   font-family: 'hanskendrick';
-//   src: url("../_assets/fonts/hanskendrick-regular-webfont.woff") format('woff');
-//   font-style: normal;
-//   font-display: swap;
-// }
+ @font-face {
+   font-family: "hanskendrick";
+   src: url("//db.onlinewebfonts.com/t/3495a658bb9e192c767af3d28c3cb2f7.woff") format("woff");
+}
 
 body {
   line-height: 1.5;
