@@ -1,3 +1,5 @@
 _site
+_assets
+node_modules
 .sass-cache
 .jekyll-metadata
