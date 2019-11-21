@@ -1,14 +1,16 @@
-.navigation{
+.navigation {
   z-index: 9;
 }
+
 .headroom {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: all .4s ease-in-out;
-  padding: 10px 40px;
   background-color: $white;
+  left: 0;
+  padding: 10px 40px;
+  position: sticky;
+  right: 0;
+  top: 0;
+  transition: all .4s ease-in-out;
+
   @include mobile {
     padding: 10px;
   }
@@ -32,6 +34,7 @@
   .nav-item {
     .nav-link {
       padding: 20px 15px;
+
       @include desktop {
         padding: 10px;
       }
@@ -39,57 +42,58 @@
   }
 
   .dropdown {
-    &:hover {
-      .dropdown-menu {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     &-menu {
-      box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.12);
-      padding: 10px;
-      border: 0;
-      top: 100%;
-      left: -10px;
-      border-radius: 0;
-      display: block;
-      visibility: hidden;
-      transition: .3s ease;
-      opacity: 0;
-      transform: translateY(-20px);
       background: $white;
+      border: 0;
+      border-radius: 0;
+      box-shadow: 0 3px 9px 0 $box-shadow-menu;
+      display: block;
+      left: -10px;
+      opacity: 0;
+      padding: 10px;
+      top: 100%;
+      transform: translateY(-20px);
+      transition: .3s ease;
+      visibility: hidden;
 
       @include desktop {
         display: none;
         opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
         text-align: center;
-      }
-
-      &.show {
-        visibility: hidden;
-
-        @include desktop {
-          visibility: visible;
-          display: block;
-        }
+        transform: translateY(0);
+        visibility: visible;
       }
     }
-    &-item{
-      &:active {
-        color: #fff;
-        background-color: $primary-color;
+
+    &-item:active {
+      background-color: $primary-color;
+      color: $white;
     }
+  }
+
+  .dropdown-menu {
+    &.show {
+      visibility: hidden;
+
+      @include desktop {
+        display: block;
+        visibility: visible;
+      }
+    }
+  }
+
+  .dropdown:hover {
+    .dropdown-menu {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
     }
   }
 }
 
 .search-icon {
-  border: 0;
   background: transparent;
+  border: 0;
   position: absolute;
   right: 0;
   top: 50%;
