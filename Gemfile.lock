@@ -78,6 +78,8 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    scss_lint (0.59.0)
+      sass (~> 3.5, >= 3.5.5)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -98,6 +100,7 @@ DEPENDENCIES
   jekyll-tagging
   minima (~> 2.0)
   rubocop
+  scss_lint
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.0)

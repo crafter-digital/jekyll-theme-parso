@@ -8,67 +8,67 @@ body {
   color: $white;
 }
 
-/* preloader */
+// preloader
 
 .preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  z-index: 999;
-  display: flex;
   align-items: center;
+  background-color: $white;
+  bottom: 0;
+  display: flex;
   justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
 
   .loader {
+    background: $white;
+    height: 40px;
+    left: 50%;
+    margin: -20px 0 0 -71px;
     position: absolute;
     top: 50%;
-    left: 50%;
     width: 142px;
-    height: 40px;
-    margin: -20px 0 0 -71px;
-    background: white;
 
     .dot {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      top: 12px;
-      left: 15px;
+      animation: dot 2.8s infinite;
       background: $primary-color;
       border-radius: 50%;
+      height: 16px;
+      left: 15px;
+      position: absolute;
+      top: 12px;
       transform: translateX(0);
-      animation: dot 2.8s infinite;
+      width: 16px;
     }
 
     .dots {
-      transform: translateX(0);
-      margin-top: 12px;
-      margin-left: 31px;
       animation: dots 2.8s infinite;
+      margin-left: 31px;
+      margin-top: 12px;
+      transform: translateX(0);
 
       span {
-        display: block;
-        float: left;
-        width: 16px;
-        height: 16px;
-        margin-left: 16px;
         background: $primary-color;
         border-radius: 50%;
+        display: block;
+        float: left;
+        height: 16px;
+        margin-left: 16px;
+        width: 16px;
       }
     }
 
     @keyframes dot {
       50% {
-        transform: translateX(96px)
+        transform: translateX(96px);
       }
     }
 
     @keyframes dots {
       50% {
-        transform: translateX(-31px)
+        transform: translateX(-31px);
       }
     }
   }
@@ -77,12 +77,12 @@ body {
 ol,
 ul {
   list-style-type: none;
-  margin: 0px;
+  margin: 0;
 }
 
 img {
-  vertical-align: middle;
   border: 0;
+  vertical-align: middle;
 }
 
 a,
@@ -111,12 +111,12 @@ a:hover {
 }
 
 .section {
-  padding-top: 90px;
   padding-bottom: 90px;
+  padding-top: 90px;
 
   &-sm {
-    padding-top: 80px;
     padding-bottom: 80px;
+    padding-top: 80px;
   }
 
   &-title {
@@ -125,36 +125,36 @@ a:hover {
 }
 
 .bg-cover {
-  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.bg-fixed{
+.bg-fixed {
   background-attachment: fixed;
-  background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .border-primary {
   border-color: $border-color !important;
 }
 
-/* overlay */
+// overlay
 
 .overlay {
   position: relative;
 
   &::before {
-    position: absolute;
+    background: $black;
     content: '';
     height: 100%;
-    width: 100%;
-    top: 0;
     left: 0;
-    background: $black;
     opacity: .5;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 
@@ -170,7 +170,7 @@ a:hover {
   background: $primary-color !important;
 }
 
-.bg-secondary{
+.bg-secondary {
   background: $secondary-color !important;
 }
 
@@ -244,12 +244,12 @@ a:hover {
   border-radius: 0;
 
   &:focus {
-    outline: 0;
-    box-shadow: none;
     border-color: $primary-color;
+    box-shadow: none;
+    outline: 0;
   }
 }
 
-textarea.form-control{
+textarea.form-control {
   height: 150px;
 }
