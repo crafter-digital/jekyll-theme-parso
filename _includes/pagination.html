@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-12">
+    <nav>
+      <ul class="pagination justify-content-center align-items-center">
+        <!-- for previous page -->
+        {% if paginator.previous_page %}
+
+          {% if paginator.previous_page == 1 %}
+            <li class="page-item">
+              <span class="page-link" href="/">&laquo; Previous</span>
+            </li>
+          {% else %}
+            <li class="page-item">
+              <span class="page-link" href="/page/{{ paginator.previous_page }}/">&laquo; Previous</span>
+            </li>
+          {% endif %}
+
+        {% else %}
+          <span class="disabled">Prev Posts</span>
+        {% endif %}
+
+        <!--  for numbering page-->
+
+        {% if paginator.page == 1 %}
+          <li class="page-item active">
+            <span class="page-link">01</span>
+          </li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="#">01</a></li>
+        {% endif %}
+
+        {% for count in (2..paginator.total_pages) %}
+
+        {% if count == paginator.page %}
+          <li class="page-item"><a class="page-link" href="#">{{ count }}</a></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="/page/{{ count }}">{{ count }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        <!-- for next page -->
+        {% if paginator.next_page %}
+          <li class="page-item">
+            <a class="page-link" href="{{ site.baseurl }}/page/{{ paginator.next_page }}/">Next &raquo;</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a>Next &raquo;</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</div>
