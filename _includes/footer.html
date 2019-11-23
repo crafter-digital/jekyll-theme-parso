@@ -1,30 +1,63 @@
-
 <footer>
   <div class="section">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-          <a href="index.html"><img src="images/logo.png" alt="persa" class="img-fluid"></a>
+          <a href="index.html">
+            {% if site.data.settings.logo %}
+              <img src="{{ site.baseurl }}/images/{{ site.data.settings.logo }}" alt="{{ site.data.settings.title }}" class="img-fluid"></a>
+            {% else %}
+              {{ site.data.settings.title }}
+            {% endif %}
         </div>
         <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
           <ul class="list-unstyled">
-            <li class="font-secondary text-dark">Sydney</li>
-            <li class="font-secondary text-dark">6 rip carl Avenue CA 90733</li>
+            {% if site.data.settings.city %}
+              <li class="font-secondary text-dark">{{ site.data.settings.city }}</li>
+            {% else %}
+              <li class="font-secondary text-dark">Put Your City here</li>
+            {% endif %}
+
+            {% if site.data.settings.address %}
+              <li class="font-secondary text-dark">{{ site.data.settings.address }}</li>
+            {% else %}
+              <li class="font-secondary text-dark">Put Your Address building here</li>
+            {% endif %}
           </ul>
         </div>
         <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
           <ul class="list-unstyled">
-            <li class="font-secondary text-dark">Tel: +90 000 333 22</li>
-            <li class="font-secondary text-dark">Mail: exmaple@ymail.com</li>
+            {% if site.data.settings.phone %}
+              <li class="font-secondary text-dark">Tel: {{ site.data.settings.phone }}</li>
+            {% else %}
+              <li class="font-secondary text-dark">Tel: Put Your phone here </li>
+            {% endif %}
+
+            {% if site.data.settings.email %}
+              <li class="font-secondary text-dark">Mail: {{ site.data.settings.email }}</li>
+            {% else %}
+              <li class="font-secondary text-dark">Mail: Put Your Email here</li>
+            {% endif %}
           </ul>
         </div>
         <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
           <span class="font-secondary text-dark mr-3">Follow</span>
           <ul class="list-inline d-inline-block">
-            <li class="list-inline-item"><a href="#" class="text-dark"><i class="ti-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="text-dark"><i class="ti-twitter-alt"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="text-dark"><i class="ti-linkedin"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="text-dark"><i class="ti-github"></i></a></li>
+            {% if site.data.settings.facebook %}
+              <li class="list-inline-item"><a href="{{ site.data.settings.facebook }}" class="text-dark"><i class="ti-facebook"></i></a></li>
+            {% else %}{% endif %}
+
+            {% if site.data.settings.twitter %}
+              <li class="list-inline-item"><a href="{{ site.data.settings.twitter }}" class="text-dark"><i class="ti-twitter-alt"></i></a></li>
+            {% else %}{% endif %}
+
+            {% if site.data.settings.linkedin %}
+              <li class="list-inline-item"><a href="{{ site.data.settings.linkedin }}" class="text-dark"><i class="ti-linkedin"></i></a></li>
+            {% else %}{% endif %}
+
+            {% if site.data.settings.github %}
+              <li class="list-inline-item"><a href="{{ site.data.settings.github }}" class="text-dark"><i class="ti-github"></i></a></li>
+            {% else %}{% endif %}
           </ul>
         </div>
       </div>
