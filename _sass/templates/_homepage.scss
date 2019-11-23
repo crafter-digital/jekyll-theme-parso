@@ -1,37 +1,37 @@
 .card-img-overlay {
   &::before {
-    position: absolute;
-    content: "";
-    background: rgba($color: $black, $alpha: .3);
+    background: $card-img-overlay-before;
+    content: '';
     height: 100%;
-    width: 100%;
-    top: 0;
     left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 
 .card-content {
+  bottom: 30px;
+  left: 0;
   padding: 30px;
   position: absolute;
-  left: 0;
   right: 0;
-  bottom: 30px;
 }
 
 .title-border {
-  position: relative;
   margin-bottom: 25px;
   padding-bottom: 30px;
+  position: relative;
 
   &::before {
-    position: absolute;
-    content: "";
-    height: 2px;
-    width: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0px;
     background: $border-color;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100px;
   }
 }
 
@@ -39,13 +39,13 @@
   position: relative;
 
   &::before {
-    position: absolute;
-    content: "";
-    height: 2px;
-    width: 300px;
-    left: -45px;
-    bottom: -50px;
     background: $border-color;
+    bottom: -50px;
+    content: '';
+    height: 2px;
+    left: -45px;
+    position: absolute;
+    width: 300px;
   }
 }
 
@@ -55,41 +55,41 @@
     white-space: nowrap;
 
     &::-webkit-scrollbar {
-      width: 0px;
-      background: transparent
+      background: transparent;
+      width: 0;
     }
   }
 
   .page-item {
     .page-link {
-      font-family: $secondary-font;
-      font-size: 30px;
       border: 0;
       color: $text-color;
+      font-family: $secondary-font;
+      font-size: 30px;
 
       @include tablet {
         font-size: 16px;
       }
-
-      &:hover {
-        color: $text-color-dark;
-        background-color: transparent;
-      }
     }
 
-    &:first-child,
-    &:last-child {
-      .page-link {
-        font-size: 16px;
-      }
+    .page-link:hover {
+      background-color: transparent;
+      color: $text-color-dark;
     }
 
     &.active {
       .page-link {
+        background: transparent;
         color: $text-color-dark;
         text-decoration: underline;
-        background: transparent;
       }
+    }
+  }
+
+  .page-item:first-child,
+  .page-item:last-child {
+    .page-link {
+      font-size: 16px;
     }
   }
 }
@@ -98,74 +98,74 @@
   position: relative;
 
   &::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
+    background: $bg-instagram-post-before;
+    content: '';
     height: 100%;
-    width: 100%;
-    background: rgba($color: $black, $alpha: .5);
+    left: 0;
     opacity: 0;
-    visibility: hidden;
+    position: absolute;
+    top: 0;
     transition: .2s ease;
+    visibility: hidden;
+    width: 100%;
   }
 
   ul {
-    position: absolute;
     left: 0;
+    opacity: 0;
+    position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0;
-    visibility: hidden;
     transition: .2s ease;
+    visibility: hidden;
 
     a {
-      transition: .2s ease;
       font-size: 20px;
+      transition: .2s ease;
+    }
 
-      &:hover {
-        color: $primary-color !important;
-      }
+    a:hover {
+      color: $primary-color !important;
     }
   }
 
   &:hover {
     &::before {
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
     }
 
     ul {
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
     }
   }
 }
 
-/* homepage 2 */
+// homepage 2
 .hero-section {
+  background-image: linear-gradient($white 45%, $secondary-color 0);
   padding: 70px 0 0;
-  background-image: linear-gradient(#fff 45%, $secondary-color 0);
 }
 
 .dividers {
-  display: flex;
   align-items: center;
-  width: 1200px;
+  display: flex;
+  left: 50%;
   position: fixed;
   top: 0;
-  left: 50%;
   transform: translateX(-50%);
+  width: 1200px;
 
   .divider {
-    border-right: 1px solid #edeef0;
+    border-right: 1px solid $homepage-divider;
     flex-basis: 50%;
     height: 100vh;
     opacity: .6;
 
     &:first-child {
-      border-left: 1px solid #edeef0;
+      border-left: 1px solid $homepage-divider;
     }
   }
 }
@@ -182,7 +182,7 @@
     margin-right: 20px;
 
     @include tablet {
-      margin: 0 0 20px 0;
+      margin: 0 0 20px;
     }
 
     img {
@@ -230,11 +230,11 @@
     }
 
     .post-image {
-      order: 2;
       margin: 0 0 0 20px;
+      order: 2;
 
       @include tablet {
-        margin: 0 0 20px 0;
+        margin: 0 0 20px;
       }
     }
 
