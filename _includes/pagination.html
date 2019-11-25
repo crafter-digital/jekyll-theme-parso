@@ -4,38 +4,43 @@
       <ul class="pagination justify-content-center align-items-center">
         <!-- for previous page -->
         {% if paginator.previous_page %}
-
+        <!-- {{ paginator.previous_page || jsonify }} -->
           {% if paginator.previous_page == 1 %}
             <li class="page-item">
-              <span class="page-link" href="/">&laquo; Previous</span>
+              <a class="page-link" href="/">&laquo; Previous</a>
             </li>
           {% else %}
             <li class="page-item">
-              <span class="page-link" href="/page/{{ paginator.previous_page }}/">&laquo; Previous</span>
+              <a class="page-link" href="{{ site.baseurl }}/page/{{ paginator.previous_page }}/">&laquo; Previous</a>
             </li>
           {% endif %}
 
         {% else %}
-          <span class="disabled">Prev Posts</span>
+          <li class="page-item">
+            <span class="disabled" href="/">&laquo; Previous</span>
+          </li>
         {% endif %}
 
         <!--  for numbering page-->
 
         {% if paginator.page == 1 %}
           <li class="page-item active">
-            <span class="page-link">01</span>
+            <span class="page-link" href="">01</span>
           </li>
         {% else %}
-          <li class="page-item"><a class="page-link" href="#">01</a></li>
+          <li class="page-item"><a class="page-link" href="/">01</a></li>
         {% endif %}
 
         {% for count in (2..paginator.total_pages) %}
-
-        {% if count == paginator.page %}
-          <li class="page-item"><a class="page-link" href="#">{{ count }}</a></li>
-        {% else %}
-          <li class="page-item"><a class="page-link" href="/page/{{ count }}">{{ count }}</a></li>
-        {% endif %}
+          {% if count == paginator.page %}
+            <li class="page-item active"><a class="page-link" href="#">0{{ count }}</a></li>
+          {% else %}
+            {% if count < 10 %}
+              <li class="page-item"><a class="page-link" href="/page/{{ count }}">0{{ count }}</a></li>
+            {% else %}
+              <li class="page-item"><a class="page-link" href="/page/{{ count }}">{{ count }}</a></li>
+            {% endif %}
+          {% endif %}
         {% endfor %}
 
         <!-- for next page -->

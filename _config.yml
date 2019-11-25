@@ -32,7 +32,7 @@ plugins:
   - jekyll-paginate
   - jekyll/tagging
 
-paginate: 13
+paginate: 12
 paginate_path: "/page/:num"
 
 
