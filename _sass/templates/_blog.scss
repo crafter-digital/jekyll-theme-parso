@@ -2,6 +2,10 @@
   height: 400px;
 }
 
+img {
+  max-width: 100%;
+}
+
 blockquote {
   background: $secondary-color;
   color: $text-color-dark;
