@@ -1,0 +1,12 @@
+<div class="media mb-4">
+  <div class="post-thumb-sm mr-3">
+    <img class="img-fluid" src="{{ site.baseurl }}/images/{{ post.image }}" alt="post-thumb">
+  </div>
+  <div class="media-body">
+    <ul class="list-inline d-flex justify-content-between mb-2">
+      <li class="list-inline-item">Post By {{ site.data.settings.author.name }}</li>
+      <li class="list-inline-item">{{ page.date | date: '%b %d, %Y' }}</li>
+    </ul>
+    <h6><a class="text-dark" href="{{ post.url || prepend: site.baseurl }}">{{ post.title }}</a></h6>
+  </div>
+</div>
