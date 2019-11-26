@@ -7,7 +7,13 @@
       {% assign without-image = 'article-without-image' %}
     {% endif %}
 
-    <p class="text-uppercase mb-2">TRAVEL</p>
+
+    {% if post.categories.size >= 1 %}
+      {% for category in post.categories  %}
+        <a class="text-uppercase mb-2"> {{ category }} </a>
+      {% endfor %}
+    {% endif %}
+
     <h4 class="title-border"><a class="text-dark" href="{{ post.url }}">{{ post.title }}</a></h4>
       <p>
       {% if post.description %}
