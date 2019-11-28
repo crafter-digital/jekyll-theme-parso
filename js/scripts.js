@@ -1,6 +1,23 @@
 (function ($) {
   'use strict';
 
+  // search
+
+  $(document).ready(function () {
+    var search_post = $('.search-post'),
+        close_icon = $('.ti-close'),
+        search_overlay = $('.search_overlay');
+
+    search_post.focus(function () {
+      console.log("tes");
+      search_overlay.addClass("is-visible");
+    });
+
+    close_icon.click(function () {
+      search_overlay.removeClass("is-visible");
+    });
+  });
+
   // Preloader js
   $(window).on('load', function () {
     $('.preloader').fadeOut(700);
