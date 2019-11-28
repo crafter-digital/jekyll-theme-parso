@@ -6,6 +6,7 @@ $text-color-dark: #000;
 $text-color-light: #767575;
 $body-color: #fff;
 $border-color: #ababab;
+$dark: #393e46;
 $black: #000;
 $white: #fff;
 $gray: #eaeaea;
@@ -15,6 +16,10 @@ $bg-instagram-post-before: rgba($color: $black, $alpha: .5);
 $homepage-divider: #edeef0;
 $white-widget: #f4f4f4;
 $box-shadow-menu:  rgba(0, 0, 0, .12);
+
+$desktop: 992px;
+$tablet:  768px;
+$mobile:  576px;
 
 // Font Variables
 $primary-font: 'Open Sans', sans-serif;
