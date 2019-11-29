@@ -20,9 +20,19 @@ layout: default
           {% if page.tags.size >= 1 %}
           <div class="post__tags">
             {% for tag in page.tags %}
-              <a href="{{ site.baseurl }}/tag/{{ tag }}" class="post__tags-tag">{{ tag }}</a>
+              <li class="list-inline-item m-1"><a href="{{ site.baseurl }}/tag/{{ tag | downcase }}">{{ tag }}</a></li>
             {% endfor %}
-          </div>
+          </ul>
+          {% endif %}
+        </div>
+        <div class="widget">
+          <h6 class="mb-4">CATEGORIES</h6>
+          {% if page.categories.size >= 1 %}
+          <ul class="list-inline tag-list">
+            {% for category in page.categories %}
+              <li class="list-inline-item m-1"><a href="{{ site.baseurl }}/category/{{ category | downcase }}">{{ category }}</a></li>
+            {% endfor %}
+          </ul>
           {% endif %}
         </div>
       </div>
