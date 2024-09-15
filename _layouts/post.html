@@ -4,19 +4,31 @@ layout: default
 <div class="container">
   <div class="post-title-box">
     <div class="row">
-      <div class="col col-10 push-2 col-11 push-t-1 col-m-12 push-m-0">
-        <span class="post__date">
-          <time datetime="{{ page.date | date_to_xmlschema }}">{{page.date | date: '%b %d, %Y'}}</time>
-        </span>
-
-        <h1 class="post-title">{{ page.title | escape }}</h1>
-
-        <div class="post__info">
-          <div class="post__author">
-            <span>By</span>
-            <a href="{{ site.baseurl }}/about/" class="author-name">{{site.data.settings.author.name}}</a>
-          </div>
-
+      <div class="col-lg-8">
+        <ul class="list-inline d-flex justify-content-between py-3">
+          <li class="list-inline-item"><i class="ti-user mr-2"></i>{{ site.data.settings.author.name }}</li>
+          <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ page.date | date: '%b %d, %Y' }}</li>
+        </ul>
+        <div class="content">
+          {{ content }}
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="widget search-box">
+          <i class="ti-search"></i>
+          <input type="search" id="search-post" class="form-control border-0 pl-5" name="search-post"
+            placeholder="Search">
+        </div>
+        <div class="widget">
+          <h6 class="mb-4">LATEST POST</h6>
+            {% if site.posts.size > 0 %}
+              {% for post in site.posts limit:3 %}
+                {% include latest_post_side.html %}
+              {% endfor %}
+            {% endif %}
+        </div>
+        <div class="widget">
+          <h6 class="mb-4">TAG</h6>
           {% if page.tags.size >= 1 %}
           <div class="post__tags">
             {% for tag in page.tags %}
