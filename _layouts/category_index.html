@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="arhive-head">
+  <div class="container">
+    <h1 class="archive-title">Category: <span>{{ page.category }}</span></h1>
+  </div>
+</div>
+
+
+<section class="section">
+  <div class="container">
+    <div class="row masonry-container">
+      {% for post in page.posts %}
+        {% include article-content.html %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
